@@ -1,0 +1,62 @@
+---
+title: "Alpha Governance Rating (AGR)"
+description: "The core AI governance rating: AAA to D, 12 dimensions, continuous monitoring."
+---
+
+## Overview
+
+The Alpha Governance Rating (AGR) is the core product of the Alpha Intelligence Suite. It provides a letter-grade assessment (AAA-D) of a company's AI governance posture across 12 dimensions.
+
+AGR functions as a credit rating analog for AI governance: independent, continuous, evidence-based, and designed for fiduciary decision-making.
+
+## What AGR Measures
+
+AGR answers one question: **Is this company governing AI in a way that protects stakeholders and enables sustainable competitive advantage?**
+
+It measures governance effectiveness across:
+- Board oversight and accountability (D1)
+- Safety testing and deployment controls (D2)
+- Transparency and disclosure quality (D3)
+- Data ethics and privacy practices (D4)
+- Governance infrastructure maturity (D5)
+- Fairness and bias mitigation (D6)
+- Workforce and environmental impact management (D7)
+- Regulatory preparedness (D8)
+- Cybersecurity resilience (D9)
+- Third-party and supply chain governance (D10)
+- External stakeholder impact accountability (D11)
+- System corrigibility and human oversight (D12)
+
+## AGR Output Format
+
+Every AGR output includes:
+
+| Field | Example | Description |
+|-------|---------|-------------|
+| Grade | `BBB` | Letter grade on the Alpha Governance Scale |
+| Composite Score | `72.4` | Weighted score across all 12 dimensions (0-100) |
+| Trajectory | `Advancing` | Direction of governance posture change |
+| Watch Status | `None` | Positive Watch, Negative Watch, or None |
+| Confidence Score | `0.78` | Confidence level based on evidence density |
+| Methodology Version | `2.0` | Version of The Alpha Standard applied |
+| D2R Map | `[{...}]` | Dimension-to-Regulation mapping with specific citations |
+
+## API Access
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.alpha.ac/functions/v1/api-gateway/v1/ratings/AAPL
+```
+
+See the [API Reference](/api/ratings) for full documentation.
+
+## Use Cases
+
+| Buyer | Use Case |
+|-------|----------|
+| **Board Chair** | Peer benchmarking, quarterly governance assessment |
+| **Risk Committee** | AI risk materiality analysis, incident preparedness |
+| **CLO/GC** | Regulatory gap identification, compliance evidence |
+| **CRO** | Vendor governance due diligence, portfolio risk |
+| **Institutional Investor** | ESG integration, proxy voting intelligence |
+| **D&O Insurer** | Underwriting risk assessment, premium calibration |

@@ -1,0 +1,104 @@
+---
+title: "Alpha Data API"
+description: "Programmatic access to Alpha Governance Ratings, signals, and compliance attestation."
+---
+
+The Alpha Data API provides programmatic access to governance intelligence for integration into your compliance workflows, risk platforms, and investment processes.
+
+## Base URL
+
+```
+https://api.alpha.ac/functions/v1/api-gateway/v1
+```
+
+## Authentication
+
+All requests require an API key in the Authorization header:
+
+```
+Authorization: Bearer YOUR_API_KEY
+```
+
+Generate your key at [alpha.ac/settings/api](https://alpha.ac/settings/api).
+
+## Endpoints
+
+<CardGroup cols={2}>
+  <Card title="Ratings" icon="chart-bar" href="/api/ratings">
+    **GET** `/v1/ratings/{ticker}` - Single company rating
+    **GET** `/v1/ratings/{ticker}/history` - Rating history
+    **POST** `/v1/ratings/batch` - Batch query
+  </Card>
+  <Card title="Signal Feed" icon="signal" href="/api/signals">
+    **GET** `/v1/signals/{ticker}` - Company signals
+    **GET** `/v1/signals/feed` - Delta stream
+  </Card>
+  <Card title="Attestation" icon="shield-check" href="/api/attestation">
+    **POST** `/v1/attestation` - Run compliance check
+    **GET** `/v1/attestation/history/{id}` - History
+  </Card>
+  <Card title="Webhooks" icon="bell" href="/api/webhooks">
+    **POST** `/v1/webhooks` - Subscribe to events
+    **DELETE** `/v1/webhooks/{id}` - Unsubscribe
+  </Card>
+</CardGroup>
+
+## Additional Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/v1/companies` | GET | List all companies in coverage universe |
+| `/v1/sectors` | GET | List sectors with aggregate governance metrics |
+| `/v1/pathways/{ticker}` | GET | Causal Pathway Maps (enterprise+) |
+| `/v1/insurance/risk-profile/{ticker}` | GET | D&O insurance risk profile |
+
+## Response Format
+
+All responses return JSON with consistent structure:
+
+```json
+{
+  "ticker": "AAPL",
+  "company_name": "Apple Inc.",
+  "rating": { ... },
+  "methodology_version": "2.0",
+  "methodology_url": "https://alpha.ac/institute/methodology",
+  "limitations_disclosure": "Alpha Governance Ratings are based on publicly available evidence and proprietary signal analysis. They represent Alpha's independent assessment and are not guarantees of future governance performance."
+}
+```
+
+Every rating response includes `methodology_url` and `limitations_disclosure` for regulatory compliance.
+
+## Rate Limiting
+
+Rate limits are enforced per API key per day. When exceeded:
+
+```json
+{
+  "error": "rate_limit_exceeded",
+  "calls_today": 1001,
+  "limit": 1000,
+  "resets_at": "2026-04-05T00:00:00Z"
+}
+```
+
+## Caching
+
+Responses include standard caching headers:
+
+```
+Cache-Control: public, max-age=3600
+ETag: "abc123"
+```
+
+Rating data is refreshed on a rolling basis. Use `If-None-Match` headers to reduce bandwidth.
+
+## SDKs
+
+Official SDKs are coming soon. In the meantime, the API follows RESTful conventions with JSON responses that work with any HTTP client.
+
+## Support
+
+- **Documentation issues:** docs@alpha.ac
+- **API key issues:** api-support@alpha.ac
+- **Enterprise inquiries:** sales@alpha.ac

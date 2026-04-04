@@ -1,0 +1,136 @@
+---
+title: "Signal Feed API"
+description: "Stream governance signals for monitored companies. Institutional tier only."
+---
+
+<Info>
+The Signal Feed API is available on the Institutional tier only. Contact sales@alpha.ac for access.
+</Info>
+
+## Get Company Signals
+
+```
+GET /v1/signals/{ticker}
+```
+
+Returns governance signals for a specific company, ordered by recency.
+
+<ParamField query="limit" type="number" default="50">
+  Maximum signals to return (max 200)
+</ParamField>
+
+<ParamField query="since" type="string">
+  ISO 8601 datetime. Only return signals after this timestamp.
+</ParamField>
+
+<ParamField query="tier" type="string">
+  Filter by signal tier: T1, T2, T3, T4, T5
+</ParamField>
+
+<ParamField query="dimension" type="number">
+  Filter by dimension number (1-12)
+</ParamField>
+
+### Response
+
+```json
+{
+  "ticker": "META",
+  "company_name": "Meta Platforms Inc.",
+  "signals": [
+    {
+      "id": "sig_abc123",
+      "signal_type": "regulatory_action",
+      "title": "EU Digital Services Act compliance order",
+      "summary": "European Commission issued formal compliance demand...",
+      "signal_tier": "T2",
+      "dimension": 8,
+      "dimension_name": "Regulatory & Compliance Posture",
+      "geh_contribution": 0.03,
+      "disclosure_timing_flag": false,
+      "source_url": "https://ec.europa.eu/...",
+      "detected_at": "2026-04-03T14:22:00Z",
+      "confidence_level": "high"
+    }
+  ],
+  "total": 142,
+  "methodology_url": "https://alpha.ac/institute/methodology"
+}
+```
+
+### Signal Tiers
+
+| Tier | Description | Weight |
+|------|-------------|--------|
+| T1 | Primary evidence: audits, assessments, first-party documentation | 3x |
+| T2 | Secondary evidence: regulatory filings, enforcement actions | 3x |
+| T3 | Third-party evidence: analyst reports, media investigations | 3x |
+| T4 | Derived evidence: peer comparison, industry benchmarks | 3x |
+| T5 | Public data: press releases, website disclosures, news | 1x |
+
+<Warning>
+T1-T4 signals are weighted 3x relative to T5 signals in governance scoring. A rating based solely on T5 signals carries a confidence level of "low" and is flagged in all outputs.
+</Warning>
+
+---
+
+## Signal Feed (Delta Stream)
+
+```
+GET /v1/signals/feed
+```
+
+Returns new governance signals across all covered companies since a given checkpoint. Designed for continuous monitoring integrations.
+
+<ParamField query="since" type="string" required>
+  ISO 8601 datetime. Returns signals detected after this timestamp.
+</ParamField>
+
+<ParamField query="limit" type="number" default="100">
+  Maximum signals per page (max 500)
+</ParamField>
+
+<ParamField query="cursor" type="string">
+  Pagination cursor from previous response
+</ParamField>
+
+### Response
+
+```json
+{
+  "signals": [
+    {
+      "id": "sig_def456",
+      "ticker": "NVDA",
+      "company_name": "NVIDIA Corporation",
+      "signal_type": "board_change",
+      "title": "New AI Ethics Board member appointed",
+      "signal_tier": "T3",
+      "dimension": 1,
+      "detected_at": "2026-04-03T16:00:00Z"
+    }
+  ],
+  "next_cursor": "eyJ...",
+  "has_more": true,
+  "checkpoint": "2026-04-03T16:00:00Z"
+}
+```
+
+Use the `checkpoint` value as `since` in your next poll to avoid gaps.
+
+---
+
+## Signal Types
+
+| Type | Description |
+|------|-------------|
+| `regulatory_action` | Enforcement, fines, compliance orders |
+| `board_change` | Director appointments, departures, committee changes |
+| `policy_disclosure` | AI principles, governance framework publications |
+| `incident` | AI system failures, bias events, safety issues |
+| `litigation` | Lawsuits, class actions, regulatory investigations |
+| `earnings_governance` | AI governance mentions in earnings calls |
+| `patent_activity` | AI safety/governance related patent filings |
+| `lobbying` | AI policy lobbying disclosures |
+| `proxy_vote` | Shareholder proposals on AI governance |
+| `certification` | Third-party audits, certifications, standards compliance |

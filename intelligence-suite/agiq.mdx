@@ -1,0 +1,65 @@
+---
+title: "Alpha Governance IQ (AGIQ)"
+description: "Measures individual and organizational AI governance readiness, scored 0-200."
+---
+
+## Overview
+
+AGIQ measures AI governance competency at the individual director and organizational level. While AGR rates companies, AGIQ rates the people responsible for governing AI.
+
+AGIQ is the foundation for:
+- **ACD.AI certification** (Alpha Certified Director: AI Governance)
+- **ACE.AI certification** (Alpha Certified Expert: AI Governance)
+- **OGA** (Organizational Governance Assessment): aggregate AGIQ across all board members and executives
+
+## Score Scale
+
+| Score | Band | Label | Certification |
+|-------|------|-------|--------------|
+| 160-200 | Expert | Alpha Certified Expert | ACE.AI issued |
+| 120-159 | Advanced | Alpha Certified Director | ACD.AI issued |
+| 80-119 | Competent | Developing | Development roadmap issued |
+| 40-79 | Emerging | Foundational | Full curriculum recommended |
+| 0-39 | Developing | Pre-Foundational | Foundational program required |
+
+Everyone who takes the AGIQ assessment receives a score and a personalized development roadmap. There is no "fail."
+
+## Six AGIQ Dimensions
+
+| Dimension | What It Measures |
+|-----------|-----------------|
+| **Governance Literacy** | Understanding of AI governance frameworks, regulatory landscape, and board oversight responsibilities |
+| **Technical Fluency** | Ability to evaluate AI system capabilities, limitations, and risk profiles without being a technologist |
+| **Decision Velocity** | Speed and quality of governance decisions in time-pressured scenarios |
+| **Regulatory Navigation** | Knowledge of EU AI Act, NIST AI RMF, ISO 42001, and cross-jurisdictional requirements |
+| **Stakeholder Awareness** | Ability to identify and weigh impacts on employees, communities, and external stakeholders |
+| **Strategic Integration** | Connecting AI governance to business strategy, competitive positioning, and long-term value creation |
+
+## Entry Point: AGIQ Diagnostic
+
+The [AGIQ Diagnostic](https://alpha.ac/institute/agiq-diagnostic) is a free, 15-minute assessment that provides a directional score and routes individuals to the appropriate tier:
+
+| Directional Score | Recommended Path |
+|------------------|-----------------|
+| 0-59 | Start with Alpha Agentic AI IQ (free explainers) |
+| 60-129 | Join Alpha Council Fluency program |
+| 130-200 | Ready for full psychometric AGIQ assessment |
+
+## OGA: Organizational Governance Assessment
+
+OGA aggregates individual AGIQ scores across a company's board and executive team to produce an organizational governance readiness score. This is the primary enterprise product built on AGIQ.
+
+OGA enables:
+- Board composition gap analysis for Nominating/Governance Committees
+- Director education budget prioritization
+- Board refresh planning with AI governance competency as a criterion
+- Peer board benchmarking on governance readiness
+
+## API Access
+
+AGIQ data is accessible through the Director endpoint:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.alpha.ac/functions/v1/api-gateway/v1/directors/{director_id}/agiq
+```

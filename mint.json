@@ -1,0 +1,103 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Alpha Documentation",
+  "logo": {
+    "dark": "/images/logo-white.png",
+    "light": "/images/logo-black.png"
+  },
+  "favicon": "/images/favicon.png",
+  "colors": {
+    "primary": "#2499FF",
+    "light": "#2499FF",
+    "dark": "#0A0A0A",
+    "anchors": {
+      "from": "#2499FF",
+      "to": "#1A9E76"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Alpha Radar",
+      "url": "https://alpha.ac/radar"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get API Key",
+    "url": "https://alpha.ac/settings/api"
+  },
+  "tabs": [
+    {
+      "name": "Methodology",
+      "url": "methodology"
+    },
+    {
+      "name": "API Reference",
+      "url": "api"
+    },
+    {
+      "name": "Intelligence Suite",
+      "url": "intelligence-suite"
+    },
+    {
+      "name": "Certification",
+      "url": "certification"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Methodology",
+      "pages": [
+        "methodology/overview",
+        "methodology/alpha-standard",
+        "methodology/dimensions",
+        "methodology/rating-scale",
+        "methodology/profiles",
+        "methodology/committee-mapping",
+        "methodology/integrity-screen"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api/overview",
+        "api/quickstart",
+        "api/ratings",
+        "api/signals",
+        "api/attestation",
+        "api/webhooks"
+      ]
+    },
+    {
+      "group": "Intelligence Suite",
+      "pages": [
+        "intelligence-suite/agr",
+        "intelligence-suite/gmi",
+        "intelligence-suite/agiq"
+      ]
+    },
+    {
+      "group": "Certification",
+      "pages": [
+        "certification/acd-ai",
+        "certification/ace-ai",
+        "certification/assessment-guide",
+        "certification/recertification"
+      ]
+    },
+    {
+      "group": "Reference",
+      "pages": [
+        "glossary"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "linkedin": "https://www.linkedin.com/company/alpha-ac",
+    "twitter": "https://x.com/alphagovernance"
+  },
+  "analytics": {
+    "posthog": {
+      "apiKey": ""
+    }
+  }
+}

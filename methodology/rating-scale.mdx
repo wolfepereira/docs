@@ -1,0 +1,68 @@
+---
+title: "Rating Scale"
+description: "The Alpha Governance Scale: AAA to D, with grade definitions, trajectory indicators, and watch status."
+---
+
+## Alpha Governance Scale
+
+| Grade | Tier | Composite Score | Description |
+|-------|------|----------------|-------------|
+| **AAA** | Leaders | 95-100 | Exceptional governance across all dimensions. Industry benchmark. |
+| **AA** | Leaders | 88-94 | Very strong governance with minor gaps. Board-level commitment evident. |
+| **A** | Leaders | 80-87 | Strong governance with clear accountability structures and proactive posture. |
+| **BBB** | Governance-Ready | 70-79 | Adequate governance. Meets baseline regulatory expectations. Some dimensions underdeveloped. |
+| **BB** | Governance-Ready | 60-69 | Developing governance. Framework exists but execution gaps are present. |
+| **B** | Developing | 50-59 | Basic governance. Policies exist but lack specificity, testing, or board oversight. |
+| **CCC** | Developing | 40-49 | Weak governance. Significant gaps across multiple dimensions. Regulatory risk elevated. |
+| **CC** | Laggards | 30-39 | Very weak governance. Minimal evidence of structured AI oversight. |
+| **C** | Laggards | 20-29 | Near-absent governance. Critical dimensions unaddressed. |
+| **D** | Laggards | 0-19 | No meaningful AI governance detected or active governance failure on record. |
+| **NR** | Not Rated | - | Coverage not initiated, insufficient evidence, rating withdrawn/suspended, entity request, or conflict of interest. |
+
+## Display Format
+
+Ratings are displayed with trajectory and, where available, the Governance Event Horizon:
+
+```
+AGR: B / GEH: 67% (+/-12pp, 90% CI)
+```
+
+## Tier Colors
+
+| Tier | Grades | Color |
+|------|--------|-------|
+| Leaders | AAA, AA, A | Blue `#2499FF` |
+| Governance-Ready | BBB, BB | Mint `#1A9E76` |
+| Developing | B, CCC | Bronze `#B8793F` |
+| Laggards | CC, C, D | Red `#C43545` |
+| Not Rated | NR | Silver `#818181` |
+
+## Trajectory
+
+Every rated company receives a trajectory indicator reflecting the direction of governance posture over the most recent assessment period:
+
+| Trajectory | Meaning |
+|-----------|---------|
+| **Advancing** | Governance posture is improving. Evidence of new controls, stronger oversight, or resolved gaps. |
+| **Stable** | Governance posture is consistent. No material change in either direction. |
+| **Declining** | Governance posture is weakening. New risks emerging, controls degrading, or oversight gaps widening. |
+
+## Watch Status
+
+A watch flag signals that a rating is under review due to a material event:
+
+| Status | Trigger |
+|--------|---------|
+| **Positive Watch** | Evidence suggests an upcoming upgrade (new governance initiative, regulatory achievement, leadership appointment). |
+| **Negative Watch** | Evidence suggests a potential downgrade (incident, regulatory action, leadership departure, disclosure gap). |
+| **None** | No material events pending. |
+
+## Concern Ceiling Logic
+
+A critical failure in a high-weight dimension can cap the overall grade regardless of composite score. For example:
+
+- D12 (Corrigibility) score below 20: grade capped at BB
+- D2 (Safety) score below 15 for Developer profile: grade capped at B
+- D8 (Regulatory) with active enforcement action: automatic Negative Watch
+
+This ensures that a company cannot achieve a high overall rating while having a critical governance blind spot.

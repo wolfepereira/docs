@@ -1,0 +1,65 @@
+---
+title: "Rating Profiles"
+description: "Developer, Deployer, and Hybrid profiles determine how dimension weights are applied."
+---
+
+## Why Profiles Matter
+
+A frontier model developer and a bank deploying third-party AI face fundamentally different governance challenges. Applying identical weights would penalize deployers for not publishing safety research and developers for not having vendor governance programs.
+
+Alpha uses three profiles within the same 12-dimension framework. The dimensions are the same; the weights reflect what matters most for each company type.
+
+## Profile Definitions
+
+### Developer Profile
+
+Companies that build, train, and distribute AI models.
+
+**Examples:** Anthropic, OpenAI, Google DeepMind, Meta AI, xAI, Stability AI, Mistral
+
+**Emphasis:** Safety (D2: 12.3%), Data Ethics (D4: 9.8%), Cybersecurity (D9: 10.7%), Corrigibility (D12: 10.0%)
+
+### Deployer Profile
+
+Companies that integrate, deploy, and operate AI systems built by others.
+
+**Examples:** JPMorgan, UnitedHealth, Walmart, most Fortune 500 companies
+
+**Emphasis:** Governance Infrastructure (D5: 11.4%), Leadership (D1: 9.8%), Fairness (D6: 8.2%), Supply Chain (D10: 8.2%)
+
+### Hybrid Profile
+
+Companies that both build and deploy AI systems.
+
+**Examples:** Apple, Amazon, Microsoft, Google (cloud + models), Tesla
+
+**Emphasis:** Balanced weights with slight emphasis on Safety (D2: 9.8%) and Governance Infrastructure (D5: 9.8%)
+
+## Profile Assignment
+
+Profile assignment is determined during Phase 1 (Evidence Collection) based on:
+
+1. **Primary business activity:** Does the company develop foundation models or primarily deploy third-party AI?
+2. **AI materiality:** How material is AI to the company's core business and risk profile?
+3. **Model distribution:** Does the company distribute models to external users or deploy internally only?
+
+The assigned profile is always disclosed in the rating output. Hybrid is the default when classification is ambiguous.
+
+## Weight Comparison
+
+| Dimension | Developer | Deployer | Hybrid |
+|-----------|-----------|----------|--------|
+| D1: Leadership | 8.2% | 9.8% | 9.0% |
+| D2: Safety | **12.3%** | 6.6% | 9.8% |
+| D3: Transparency | 8.2% | 8.2% | 8.2% |
+| D4: Data Ethics | **9.8%** | 6.6% | 8.2% |
+| D5: Governance Infra | 8.2% | **11.4%** | 9.8% |
+| D6: Fairness | 4.9% | **8.2%** | 6.6% |
+| D7: Workforce & Society | 4.9% | **8.2%** | 6.6% |
+| D8: Regulatory | 8.2% | 8.2% | 8.2% |
+| D9: Cybersecurity | **10.7%** | 6.6% | 8.2% |
+| D10: Supply Chain | 6.6% | **8.2%** | 7.4% |
+| D11: Stakeholder Impact | 8.0% | 8.0% | 8.0% |
+| D12: Corrigibility | 10.0% | 10.0% | 10.0% |
+
+D11 and D12 carry equal weight across all profiles: these are universal governance requirements regardless of whether a company builds or deploys AI.

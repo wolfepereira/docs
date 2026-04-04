@@ -1,0 +1,110 @@
+---
+title: "Quickstart"
+description: "Get your Alpha Data API key and make your first governance query in 5 minutes."
+---
+
+## Get Your API Key
+
+1. Go to [alpha.ac/settings/api](https://alpha.ac/settings/api)
+2. Click **Generate API Key**
+3. Copy the key (it will only be shown once)
+4. Store it securely. Never expose it in client-side code.
+
+<Warning>
+API keys are hashed with SHA-256 before storage. Alpha cannot retrieve your key if lost. Generate a new one if needed.
+</Warning>
+
+## API Tiers
+
+| Tier | Rate Limit | Batch Size | Assessed Access | Price |
+|------|-----------|------------|-----------------|-------|
+| Research | 1,000 calls/day | 50 | No | Free |
+| Professional | 10,000 calls/day | 200 | No | $500/mo |
+| Enterprise | Unlimited | 500 | Yes | $2,500/mo |
+| Institutional | Unlimited | 500 | Yes + Signal Feed | Custom |
+
+## Make Your First Request
+
+<CodeGroup>
+
+```bash cURL
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.alpha.ac/functions/v1/api-gateway/v1/ratings/AAPL
+```
+
+```python Python
+import requests
+
+headers = {"Authorization": "Bearer YOUR_API_KEY"}
+response = requests.get(
+    "https://api.alpha.ac/functions/v1/api-gateway/v1/ratings/AAPL",
+    headers=headers,
+)
+data = response.json()
+
+print(f"Grade: {data['rating']['grade']}")
+print(f"Tier: {data['rating']['tier']}")
+print(f"Trajectory: {data['rating']['trajectory']}")
+```
+
+```typescript TypeScript
+const response = await fetch(
+  "https://api.alpha.ac/functions/v1/api-gateway/v1/ratings/AAPL",
+  {
+    headers: { Authorization: "Bearer YOUR_API_KEY" },
+  }
+);
+const data = await response.json();
+
+console.log(`Grade: ${data.rating.grade}`);
+console.log(`Tier: ${data.rating.tier}`);
+```
+
+</CodeGroup>
+
+## Response
+
+```json
+{
+  "ticker": "AAPL",
+  "company_name": "Apple Inc.",
+  "exchange": "NASDAQ",
+  "sector": "Technology",
+  "rating": {
+    "grade": "BBB",
+    "tier": "Governance-Ready",
+    "score": 72.4,
+    "trajectory": "Advancing",
+    "watch": null,
+    "confidence": "medium",
+    "rating_type": "public",
+    "is_assessed": false,
+    "maturity_level": 3
+  },
+  "dimensions": [
+    { "number": 1, "name": "Leadership & Accountability", "score": 7.2, "weight": 0.10, "confidence": "medium" },
+    { "number": 2, "name": "AI Safety & Robustness", "score": 6.8, "weight": 0.12, "confidence": "medium" }
+  ],
+  "methodology_version": "2.0",
+  "alpha_standard_signature": "sha256:abc123...",
+  "rated_at": "2026-03-15T00:00:00Z",
+  "updated_at": "2026-04-01T12:00:00Z"
+}
+```
+
+## What's Next
+
+<CardGroup cols={2}>
+  <Card title="Ratings API" icon="chart-bar" href="/api/ratings">
+    Look up governance ratings by ticker
+  </Card>
+  <Card title="Signal Feed" icon="signal" href="/api/signals">
+    Stream governance signals in real-time
+  </Card>
+  <Card title="Batch Queries" icon="layer-group" href="/api/batch">
+    Query multiple companies at once
+  </Card>
+  <Card title="Webhooks" icon="bell" href="/api/webhooks">
+    Get notified on rating changes
+  </Card>
+</CardGroup>

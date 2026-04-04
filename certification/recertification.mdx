@@ -1,0 +1,68 @@
+---
+title: "Recertification"
+description: "Annual recertification requirements to maintain ACD.AI and ACE.AI credentials."
+---
+
+## Why Annual Recertification
+
+AI governance is evolving rapidly. The EU AI Act enforcement begins August 2, 2026. New regulatory frameworks emerge quarterly. Board directors need current competency, not a one-time credential.
+
+Annual recertification ensures that certified directors maintain active, relevant governance knowledge.
+
+## Requirements
+
+| Credential | Recertification Fee | Requirements |
+|-----------|-------------------|--------------|
+| ACD.AI | $600/year | 20 CPE credits + abbreviated assessment |
+| ACE.AI | $900/year | 30 CPE credits + abbreviated assessment |
+
+## Continuing Professional Education (CPE) Credits
+
+Credits can be earned through:
+
+| Activity | Credits |
+|----------|---------|
+| Alpha Council monthly sessions | 1 per session (12/year max) |
+| Quarterly emerging tech briefings | 2 per briefing (8/year max) |
+| Board Red Team exercise (facilitator) | 5 per exercise |
+| Board Red Team exercise (participant) | 3 per exercise |
+| Alpha Institute published contribution | 5 per article |
+| Approved external governance education | Varies (submit for review) |
+
+## Abbreviated Assessment
+
+The recertification assessment is shorter than the initial certification (45 minutes) and focuses on:
+
+- Regulatory updates since last certification
+- New governance frameworks and standards
+- Emerging technology governance scenarios (agentic AI, autonomous systems)
+- Applied case studies from the past year
+
+## Grace Period
+
+Certified directors have a 90-day grace period after their annual renewal date. During the grace period:
+
+- Credential remains valid but marked as "Renewal Pending"
+- Public registry shows renewal status
+- After 90 days without renewal, credential status changes to "Expired"
+
+## Reinstatement
+
+Expired credentials can be reinstated within 12 months by completing the full recertification requirements plus a reinstatement fee. After 12 months, a full re-assessment is required.
+
+## Verification
+
+Credential verification through the API always returns current status:
+
+```json
+{
+  "credential_id": "ACD-2026-001234",
+  "status": "active",
+  "holder": "Jane Smith",
+  "credential_type": "ACD.AI",
+  "issued": "2026-03-15",
+  "expires": "2027-03-15",
+  "cpe_credits": 14,
+  "cpe_required": 20
+}
+```

@@ -1,0 +1,53 @@
+---
+title: "Governance Materiality Index (GMI)"
+description: "Quantifies how material AI governance risk is to a specific company, scored 1-100."
+---
+
+## Overview
+
+The Governance Materiality Index (GMI) answers a different question than AGR. While AGR measures governance quality, GMI measures governance **relevance**: how much does AI governance matter to this specific company?
+
+A regional bank deploying a single chatbot has low AI governance materiality. A frontier model developer or a healthcare company deploying clinical AI has high materiality. GMI quantifies this difference.
+
+## Score Range
+
+| Range | Materiality Level | Implication |
+|-------|------------------|-------------|
+| 80-100 | **Critical** | AI governance is existential to business continuity. Board-level priority. |
+| 60-79 | **High** | AI governance materially affects risk profile and regulatory exposure. |
+| 40-59 | **Moderate** | AI governance is relevant but not dominant in the company's risk landscape. |
+| 20-39 | **Low** | Limited AI deployment. Governance requirements are emerging, not urgent. |
+| 1-19 | **Minimal** | AI is not material to current operations. Monitoring-only posture appropriate. |
+
+## Inputs
+
+GMI is calculated from:
+
+- **AI deployment intensity:** Number and criticality of AI systems in production
+- **Sector AI materiality:** Industry-level AI adoption and risk patterns
+- **Revenue dependency:** Percentage of revenue tied to AI-enabled products or services
+- **Regulatory exposure:** Jurisdictional requirements (EU AI Act high-risk classification, etc.)
+- **Workforce AI impact:** Degree of workforce transformation driven by AI
+- **Public scrutiny:** Media and stakeholder attention to the company's AI activities
+
+## How GMI Relates to AGR
+
+GMI contextualizes AGR. A company with:
+- **High GMI + Low AGR** = Critical governance gap. Immediate risk.
+- **High GMI + High AGR** = Well-governed in a high-stakes environment.
+- **Low GMI + Low AGR** = Low priority. Monitor for materiality changes.
+- **Low GMI + High AGR** = Over-invested in governance relative to exposure (rare but possible).
+
+## API Access
+
+GMI is included in every ratings API response alongside AGR:
+
+```json
+{
+  "ticker": "AAPL",
+  "agr": { "grade": "BBB", "score": 72.4 },
+  "gmi": { "score": 78, "level": "High" }
+}
+```
+
+See the [API Reference](/api/ratings) for details.

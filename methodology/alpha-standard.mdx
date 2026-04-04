@@ -1,0 +1,58 @@
+---
+title: "The Alpha Standard"
+description: "The 12-dimension governance assessment framework, from v1 (8 dimensions) to the current v4 (12 dimensions)."
+---
+
+The Alpha Standard is the comprehensive framework used to assess AI governance across all rated companies. It has evolved through four versions as the field has matured.
+
+## Version History
+
+| Version | Dimensions | Added | Rationale |
+|---------|-----------|-------|-----------|
+| v1 | D1-D8 | Original 8 | Core governance dimensions covering leadership through regulatory compliance |
+| v2 | D1-D10 | D9 Cybersecurity, D10 Supply Chain | AI systems create novel attack surfaces and vendor dependencies |
+| v3 | D1-D11 | D11 Stakeholder Impact | External harm accountability: workforce displacement, environmental impact, societal effects |
+| v4 | D1-D12 | D12 Corrigibility | Demonstrated ability to override, shut down, or correct AI systems under pressure |
+
+## Scoring Mechanics
+
+Each dimension is scored 0-100 based on codified indicators. The composite score is a weighted sum based on the company's Rating Profile (Developer, Deployer, or Hybrid).
+
+### Weights by Profile
+
+| # | Dimension | Developer | Deployer | Hybrid |
+|---|-----------|-----------|----------|--------|
+| D1 | Leadership & Accountability | 8.2% | 9.8% | 9.0% |
+| D2 | AI Safety & Robustness | 12.3% | 6.6% | 9.8% |
+| D3 | Transparency & Disclosure | 8.2% | 8.2% | 8.2% |
+| D4 | Data Ethics & Privacy | 9.8% | 6.6% | 8.2% |
+| D5 | Governance Infrastructure | 8.2% | 11.4% | 9.8% |
+| D6 | Fairness & Bias Mitigation | 4.9% | 8.2% | 6.6% |
+| D7 | Societal, Workforce & Environmental | 4.9% | 8.2% | 6.6% |
+| D8 | Regulatory & Compliance Posture | 8.2% | 8.2% | 8.2% |
+| D9 | Cybersecurity & AI Resilience | 10.7% | 6.6% | 8.2% |
+| D10 | Third-Party & Supply Chain | 6.6% | 8.2% | 7.4% |
+| D11 | Stakeholder Impact Layer | 8.0% | 8.0% | 8.0% |
+| D12 | Corrigibility Assessment | 10.0% | 10.0% | 10.0% |
+| | **Total** | **100%** | **100%** | **100%** |
+
+All weight sets are validated to sum to exactly 1.0 in the scoring engine.
+
+## Cross-Dimension Checks
+
+The Alpha Standard includes several cross-cutting mechanisms:
+
+- **Concern Ceiling Logic:** A critical failure in one dimension can cap the overall grade. A company with excellent scores across 11 dimensions but a D12 (Corrigibility) score below 20 cannot receive a grade above BB.
+- **Critical Floor Checks:** Minimum thresholds for safety-critical dimensions. If D2 (Safety) falls below the floor, an automatic watch flag is triggered.
+- **Cross-Signal Inference:** Signals detected in one dimension can affect scores in related dimensions. A cybersecurity incident (D9) that reveals poor incident response also impacts D2 (Safety) and D8 (Regulatory).
+- **Committee Zone Coherence:** High variance between dimensions within the same committee zone flags structural governance gaps.
+
+## Regulatory Alignment
+
+Every dimension maps to specific regulatory requirements through the D2R Map (Dimension-to-Regulation Map):
+
+- **EU AI Act** articles and annexes
+- **ISO 42001** clauses
+- **NIST AI RMF** functions and categories
+
+The D2R Map is mandatory on every rating output, ensuring that governance scores translate directly into regulatory compliance posture.

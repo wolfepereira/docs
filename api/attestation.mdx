@@ -1,0 +1,129 @@
+---
+title: "EU AI Act Attestation"
+description: "Run compliance attestation assessments against the EU AI Act Standards Crosswalk."
+---
+
+## Run Attestation
+
+```
+POST /v1/attestation
+```
+
+Generates a compliance readiness assessment for a company against a regulatory jurisdiction.
+
+### Request Body
+
+```json
+{
+  "company_id": "uuid-here",
+  "jurisdiction": "EU_AI_ACT"
+}
+```
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `company_id` | string (UUID) | Yes | Company identifier |
+| `jurisdiction` | string | No | Default: `EU_AI_ACT`. Options: `EU_AI_ACT`, `NIST_AI_RMF`, `ISO_42001` |
+
+### Response
+
+```json
+{
+  "company_id": "uuid-here",
+  "jurisdiction": "EU_AI_ACT",
+  "readiness_pct": 43.2,
+  "gap_count": 14,
+  "critical_gap_count": 5,
+  "total_requirements": 22,
+  "requirements": [
+    {
+      "article": "Article 9",
+      "title": "Risk Management System",
+      "status": "partial",
+      "dimension_mapping": [2, 9],
+      "gap_description": "No formal AI risk classification system disclosed",
+      "remediation_priority": "critical",
+      "estimated_effort": "3-6 months"
+    }
+  ],
+  "dimension_snapshot": {
+    "D1": 6.2,
+    "D2": 5.8,
+    "D8": 4.1
+  },
+  "remediation_priorities": [
+    {
+      "priority": 1,
+      "requirement": "Article 9: Risk Management System",
+      "current_gap": "No AI risk classification",
+      "recommended_action": "Implement tiered AI risk assessment aligned with Article 6 categories",
+      "timeline": "Q3 2026"
+    }
+  ],
+  "generated_at": "2026-04-04T12:00:00Z"
+}
+```
+
+### Requirement Statuses
+
+| Status | Description |
+|--------|-------------|
+| `met` | Requirement fully satisfied by current governance posture |
+| `partial` | Some evidence of compliance, gaps remain |
+| `not_met` | No evidence of compliance |
+| `not_applicable` | Requirement does not apply to this company's AI profile |
+
+---
+
+## Attestation History
+
+```
+GET /v1/attestation/history/{company_id}
+```
+
+Returns all historical attestation runs for a company.
+
+### Response
+
+```json
+{
+  "company_id": "uuid-here",
+  "history": [
+    {
+      "id": "att_abc123",
+      "jurisdiction": "EU_AI_ACT",
+      "readiness_pct": 43.2,
+      "gap_count": 14,
+      "critical_gap_count": 5,
+      "generated_at": "2026-04-04T12:00:00Z",
+      "triggered_by": "manual"
+    },
+    {
+      "id": "att_def456",
+      "jurisdiction": "EU_AI_ACT",
+      "readiness_pct": 38.1,
+      "gap_count": 16,
+      "critical_gap_count": 6,
+      "generated_at": "2026-03-01T12:00:00Z",
+      "triggered_by": "autonomous_agent"
+    }
+  ]
+}
+```
+
+---
+
+## Continuous Monitoring
+
+Companies with active attestation subscriptions receive monthly automated re-assessments. Results are stored in `attestation_history` and regressions trigger alerts.
+
+To set up continuous monitoring, contact sales@alpha.ac or use the attestation dashboard at [alpha.ac/radar/attestation](https://alpha.ac/radar/attestation).
+
+### Jurisdictions Supported
+
+| Jurisdiction | Requirements | Status |
+|-------------|-------------|--------|
+| EU AI Act | 22 articles mapped | Complete |
+| ISO 42001 | 17 clauses mapped | Complete |
+| NIST AI RMF | 20 functions mapped | Complete |
+| SEC AI Disclosure | In development | Q3 2026 |
