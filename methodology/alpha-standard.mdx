@@ -42,8 +42,8 @@ All weight sets are validated to sum to exactly 1.0 in the scoring engine.
 
 The Alpha Standard includes several cross-cutting mechanisms:
 
-- **Concern Ceiling Logic:** A critical failure in one dimension can cap the overall grade. A company with excellent scores across 11 dimensions but a D12 (Corrigibility) score below 20 cannot receive a grade above BB.
-- **Critical Floor Checks:** Minimum thresholds for safety-critical dimensions. If D2 (Safety) falls below the floor, an automatic watch flag is triggered.
+- **Concern Ceiling Logic:** The independent concern screen can cap the overall grade at D, CCC, BB, or A regardless of the composite.
+- **Critical Floor Checks:** General floors apply across D1-D10, with added universal floors for D1 and D8, profile-specific floors for D2, D6, D9, and D10, and assessed-rating D12 floors for corrigibility.
 - **Cross-Signal Inference:** Signals detected in one dimension can affect scores in related dimensions. A cybersecurity incident (D9) that reveals poor incident response also impacts D2 (Safety) and D8 (Regulatory).
 - **Committee Zone Coherence:** High variance between dimensions within the same committee zone flags structural governance gaps.
 

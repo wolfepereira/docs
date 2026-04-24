@@ -1,0 +1,191 @@
+---
+title: "Scoring Rubric"
+description: "How Alpha converts evidence into indicator scores, dimension scores, confidence levels, and final grade decisions."
+---
+
+Alpha Governance Ratings are not checklist scores. The rubric rewards governance that is owned, evidenced, and demonstrated under pressure. A company does not earn a top result for publishing principles alone. It earns it by showing that governance changed a real decision, constrained risk, or held under stress.
+
+## Rubric Principles
+
+- Constraint beats commitment. A delayed launch, blocked use case, or documented override matters more than a policy statement.
+- Specificity beats slogans. Named owners, cadences, thresholds, and escalation paths score above generic responsible AI language.
+- Verified evidence beats self-description. Hard-to-game evidence carries more weight than marketing copy.
+- Repeatability beats one-off disclosure. A recurring board review or tested control scores above a single announcement.
+- Weak links matter. A strong composite cannot erase a critical failure in safety, regulatory posture, or corrigibility.
+
+## 1. Indicator-Level Anchors
+
+Most Alpha indicators are scored on a 1-10 scale and then rolled into 0-100 dimension scores. Dedicated layers such as D11 and D12 can also use 0 when the company shows no demonstrable capability.
+
+| Indicator band | Meaning | What usually has to be true |
+|----------------|---------|-----------------------------|
+| **9-10** | Demonstrated leader | Named ownership, explicit governance design, recurring oversight, and evidence that the control worked in practice. Independent verification or stress evidence is often present. |
+| **7-8** | Governance-ready | Clear owner, documented process, credible implementation evidence, and board or committee visibility. Gaps remain in coverage, specificity, or proof under stress. |
+| **5-6** | Developing | The company has started building the control, but implementation is uneven, incomplete, or localized. Governance exists, but it is not yet institutionalized. |
+| **3-4** | Lagging | Governance is reactive, fragmented, or mostly descriptive. Responsibilities are unclear, evidence is thin, and practice trails disclosure. |
+| **1-2** | Deficient | Little credible evidence of a functioning control. The company is relying on aspiration, boilerplate, or ad hoc judgment. |
+| **0** | No demonstrated capability | Used sparingly for dedicated layers, especially where the question is binary in practice: has governance ever actually intervened? |
+
+### Tie-break rule
+
+When two adjacent scores are both plausible, the lower score wins unless there is evidence of either:
+
+- recurring execution over time, or
+- governance holding under stress.
+
+That rule is deliberate. It prevents polished disclosure from outranking demonstrated control.
+
+## 2. Evidence Quality Rubric
+
+Alpha distinguishes between the strength of a claim and the strength of the evidence supporting it.
+
+| Evidence quality | Meaning | Typical sources | What it can support |
+|------------------|---------|-----------------|---------------------|
+| **Verified** | Independently auditable or regulator-grade evidence | SEC filings, enforcement actions, court records, AIID operator records, third-party audits, formal attestations | Highest-band scores, ceiling removal, strong confidence |
+| **Disclosed** | Specific company disclosure with enough detail to evaluate | Proxy statements, governance reports, model cards, committee charters, published frameworks | Mid-to-high scores when internally consistent |
+| **Inferred** | Credible but indirect signal | Cross-signal patterns, architecture clues, peer-consistent behavior, reputable reporting without direct primary support | Directional scoring only; rarely enough for top-band claims by itself |
+| **Absent** | No credible evidence, or evidence contradicts the claim | Silence, boilerplate, stale disclosure, uncorroborated marketing language | No substantive credit |
+
+## 3. Confidence Standard
+
+Dimension confidence is derived from evidence density, not from how polished the narrative sounds.
+
+| Confidence | Threshold |
+|------------|-----------|
+| **High** | 60% or more of indicators are supported by verified or disclosed evidence |
+| **Medium** | 30% to 59% of indicators are supported by verified or disclosed evidence |
+| **Low** | Less than 30% of indicators are supported by verified or disclosed evidence |
+
+High confidence does not mean perfect governance. It means Alpha has enough quality evidence to rate the company with conviction.
+
+## 4. Weighting and Anti-Gaming Rules
+
+Alpha does not treat every indicator equally.
+
+- **Developer-critical indicators** can count double. This applies to issues such as pre-deployment testing, model documentation, training data governance, and misuse evaluation where developers bear heavier obligations.
+- **High-resistance indicators** get a 1.5x weight multiplier. These are difficult to fake because they require historical events, external verification, or regulator-grade evidence.
+- **Low-resistance indicators** get a 0.8x multiplier. Self-reported commitments and easy-to-polish disclosures count, but they count less.
+
+The practical effect is simple: a company cannot talk its way into a strong rating. The rubric is intentionally biased toward evidence that would survive skeptical committee review.
+
+## 5. Dimension Decision Rubric
+
+The table below gives the board-level question behind each dimension, the evidence pattern that typically supports a strong score, and the failure pattern that usually keeps a company below 5/10.
+
+| Dimension | Board question | What strong evidence looks like | What suppresses the score |
+|-----------|----------------|---------------------------------|---------------------------|
+| **D1 Leadership & Accountability** | Who owns AI governance? | Named C-suite owner, board reporting line, charter language, quarterly agenda time, AI-literate directors, decision rights | Diffuse ownership, reactive discussion, no charter specificity, no board expertise |
+| **D2 AI Safety & Robustness** | Can the company operate AI safely? | Pre-deployment testing, staged rollout, incident response, red-teaming, and evidence that governance constrained a risky decision | Safety language without testing, no incident playbook, no proof of a deployment hold |
+| **D3 Transparency & Disclosure** | Does the company explain what it is doing? | Specific AI disclosure in filings, system or model documentation, governance-structure disclosure, stakeholder communication cadence | Generic principles, no inventory, no disclosure of governance structure or limits |
+| **D4 Data Ethics & Privacy** | Does the company govern the data layer responsibly? | Sourcing and licensing discipline, consent controls, privacy-by-design, dangerous capability filtering, deletion and transfer governance | Opaque training data rights, undefined consent basis, no data ethics review process |
+| **D5 Governance Infrastructure** | Is there a real operating system for governance? | Policies, classification frameworks, impact assessments, audit practice, escalation, whistleblower channel, lifecycle control | One-off policy documents, no audit trail, no decommission path, no escalation ownership |
+| **D6 Fairness & Bias Mitigation** | Can the company detect and correct unfair outcomes? | Bias testing, demographic performance evidence, remediation protocol, third-party audit, recourse channel | Fairness principles without metrics, no remediation, no stakeholder recourse |
+| **D7 Societal, Workforce & Environmental Impact** | Does the company govern external consequences? | Workforce transition planning, reskilling, displacement measurement, environmental footprint transparency, community impact review | PR framing without quantified plans, no workforce measurement, no evidence of follow-through |
+| **D8 Regulatory & Compliance Posture** | Is the company genuinely regulatory-ready? | Multi-jurisdiction mapping, formal readiness program, training, response team, proactive engagement, quality response to enforcement | Compliance treated as future work, weak legal operating model, poor response to regulatory pressure |
+| **D9 Cybersecurity & AI Resilience** | Can the company secure and recover AI systems? | AI threat modeling, model security controls, adversarial testing, integrity monitoring, incident detection, resilience planning | General cyber posture only, no AI-specific control set, no adversarial readiness |
+| **D10 Third-Party & Supply Chain Governance** | Can the company govern vendors and external models? | AI inventory, contractual safeguards, provenance tracking, subprocessor governance, ongoing monitoring, exit planning | Unknown vendor estate, no AI clauses, no provenance evidence, no corrective-action process |
+| **D11 Stakeholder Impact Layer** | Does the company identify and remediate external harm? | Harm tracking, notification, recourse, remediation, post-incident engagement, external audit of stakeholder impact | No stakeholder harm accounting, no notification or recourse path, no remediation ownership |
+| **D12 Corrigibility Assessment** | Can governance actually stop or correct AI? | Documented override event, tested shutdown or rollback, evidence of system modification after governance intervention, board reporting cadence | Policy-only oversight, no tested control, no documented intervention, no verified override capability |
+
+## 6. Issuance Standard
+
+Not every analytical output should be presented as a public letter grade.
+
+| Output type | What Alpha can show | Rubric standard |
+|-------------|---------------------|-----------------|
+| **Public Profile** | Full analytical content without a public letter grade | Public evidence only. Alpha can analyze posture, flags, and dimension patterns, but does not publicly issue the full AAA-D scale. |
+| **Assessed Rating** | Full letter grade, trajectory, and watch status | Direct engagement and founder review by Steven Wolfe Pereira allow Alpha to apply the complete grade architecture, including assessed-only D12 treatment. |
+| **Alpha Estimate** | Clearly labeled directional view | Never presented as equivalent to an assessed rating. Useful for internal triage, not for public-grade claims. |
+
+## 7. Grade Mapping
+
+The final composite score maps to the Alpha Governance Scale as follows:
+
+| Grade | Tier | Composite score |
+|-------|------|-----------------|
+| **AAA** | Leaders | 93.0-100.0 |
+| **AA** | Leaders | 85.0-92.99 |
+| **A** | Governance-Ready | 77.0-84.99 |
+| **BBB** | Governance-Ready | 70.0-76.99 |
+| **BB** | Developing | 62.0-69.99 |
+| **B** | Developing | 54.0-61.99 |
+| **CCC** | Laggards | 46.0-53.99 |
+| **CC** | Laggards | 35.0-45.99 |
+| **C** | Laggards | 25.0-34.99 |
+| **D** | Disqualified | 0.0-24.99 |
+
+These bands are applied after profile weighting, materiality adjustment, and all ceiling logic.
+
+## 8. Hard Constraints
+
+Alpha uses explicit floor and ceiling rules so that a company cannot bury a critical governance failure inside a strong average.
+
+### Materiality curve
+
+Companies with the highest AI materiality face a stricter composite curve:
+
+- **Critical materiality:** composite multiplied by `0.92`
+- **High materiality:** composite multiplied by `0.96`
+- **Moderate or Low materiality:** no downward adjustment
+
+### General floor rules
+
+These apply across D1-D10:
+
+| Trigger | Maximum grade |
+|---------|---------------|
+| Any applicable dimension below 30/100 | **D** |
+| Any applicable dimension at 30-39/100 | **CC** |
+| Any applicable dimension at 40-49/100 | **B** |
+
+### Universal floor rules
+
+| Trigger | Maximum grade |
+|---------|---------------|
+| **D1 Leadership & Accountability** below 50/100 | **A** |
+| **D8 Regulatory & Compliance Posture** below 40/100 | **BBB** |
+
+### Profile-specific floors
+
+| Profile | Trigger | Maximum grade |
+|---------|---------|---------------|
+| **Developer** | D2 below 50/100 | **BBB** |
+| **Developer** | D9 below 50/100 | **A** |
+| **Deployer** | D6 below 50/100 | **BBB** |
+| **Deployer** | D10 below 50/100 | **A** |
+| **Hybrid** | D2 below 50/100 | **BBB** |
+| **Hybrid** | D6, D9, or D10 below 50/100 | **A** |
+
+### Corrigibility floor rules
+
+These are the most important assessed-rating constraints in the framework:
+
+| D12 condition | Maximum grade | Why it exists |
+|---------------|---------------|---------------|
+| **D12 = 0** | **B** | No evidence governance has ever stopped, modified, or constrained a deployed AI system |
+| **D12 below 20/100** | **BB** | Override architecture may exist on paper, but it has not been demonstrated or independently verified |
+
+Public Profiles do not use the assessed-rating D12 ceiling in the same way, because public evidence is structurally weaker and public letter grades are not issued.
+
+### Concern ceilings
+
+The concern screen operates independently from dimension scoring:
+
+| Concern result | Maximum grade |
+|----------------|---------------|
+| Any **Disqualifying** concern | **D** |
+| Any **Severe** concern | **CCC** |
+| Two or more **Elevated** concerns | **BB** |
+| One **Elevated** concern | **A** |
+
+## 9. Current Review Standard
+
+Before Alpha issues or changes an Assessed Rating, Steven Wolfe Pereira, as Alpha's current methodology owner and reviewer, should be able to answer "yes" to all five questions below:
+
+1. Does the evidence support the score, or only the narrative?
+2. Are the highest-weight indicators backed by hard-to-game proof?
+3. Has the company shown governance in practice, not just governance on paper?
+4. Does any floor, concern ceiling, or corrigibility ceiling apply?
+5. Would a skeptical board committee accept this rationale without needing unstated assumptions?
+
+If the answer to any question is no, the rating should not move up.

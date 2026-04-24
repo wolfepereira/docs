@@ -5,18 +5,20 @@ description: "The Alpha Governance Scale: AAA to D, with grade definitions, traj
 
 ## Alpha Governance Scale
 
+Public Profiles do not display public letter grades. The scale below applies to Assessed Ratings, committee-reviewed internal grading, and any context where Alpha is explicitly issuing a full AGR grade.
+
 | Grade | Tier | Composite Score | Description |
 |-------|------|----------------|-------------|
-| **AAA** | Leaders | 95-100 | Exceptional governance across all dimensions. Industry benchmark. |
-| **AA** | Leaders | 88-94 | Very strong governance with minor gaps. Board-level commitment evident. |
-| **A** | Leaders | 80-87 | Strong governance with clear accountability structures and proactive posture. |
-| **BBB** | Governance-Ready | 70-79 | Adequate governance. Meets baseline regulatory expectations. Some dimensions underdeveloped. |
-| **BB** | Governance-Ready | 60-69 | Developing governance. Framework exists but execution gaps are present. |
-| **B** | Developing | 50-59 | Basic governance. Policies exist but lack specificity, testing, or board oversight. |
-| **CCC** | Developing | 40-49 | Weak governance. Significant gaps across multiple dimensions. Regulatory risk elevated. |
-| **CC** | Laggards | 30-39 | Very weak governance. Minimal evidence of structured AI oversight. |
-| **C** | Laggards | 20-29 | Near-absent governance. Critical dimensions unaddressed. |
-| **D** | Laggards | 0-19 | No meaningful AI governance detected or active governance failure on record. |
+| **AAA** | Leaders | 93.0-100.0 | Governance is demonstrably market-leading, stress-tested, and hard to game. |
+| **AA** | Leaders | 85.0-92.99 | Governance is comprehensive, well evidenced, and consistently effective. |
+| **A** | Governance-Ready | 77.0-84.99 | Governance is strong, but not yet leader-level across the full framework. |
+| **BBB** | Governance-Ready | 70.0-76.99 | Governance meets an institutional baseline with visible gaps still to close. |
+| **BB** | Developing | 62.0-69.99 | Governance architecture exists, but execution and proof remain uneven. |
+| **B** | Developing | 54.0-61.99 | Basic governance is present, but important controls are weak, partial, or unproven. |
+| **CCC** | Laggards | 46.0-53.99 | Governance is reactive and materially incomplete. |
+| **CC** | Laggards | 35.0-45.99 | Governance is very weak, with significant exposure across core dimensions. |
+| **C** | Laggards | 25.0-34.99 | Governance exists mostly in name only. |
+| **D** | Disqualified | 0.0-24.99 | Governance failure, severe deficiency, or disqualifying concern. |
 | **NR** | Not Rated | - | Coverage not initiated, insufficient evidence, rating withdrawn/suspended, entity request, or conflict of interest. |
 
 ## Display Format
@@ -31,10 +33,11 @@ AGR: B / GEH: 67% (+/-12pp, 90% CI)
 
 | Tier | Grades | Color |
 |------|--------|-------|
-| Leaders | AAA, AA, A | Blue `#2499FF` |
-| Governance-Ready | BBB, BB | Mint `#1A9E76` |
-| Developing | B, CCC | Bronze `#B8793F` |
-| Laggards | CC, C, D | Red `#C43545` |
+| Leaders | AAA, AA | Blue `#2499FF` |
+| Governance-Ready | A, BBB | Mint `#1A9E76` |
+| Developing | BB, B | Bronze `#B8793F` |
+| Laggards | CCC, CC, C | Red `#C43545` |
+| Disqualified | D | Red `#C43545` |
 | Not Rated | NR | Silver `#818181` |
 
 ## Trajectory
@@ -57,12 +60,16 @@ A watch flag signals that a rating is under review due to a material event:
 | **Negative Watch** | Evidence suggests a potential downgrade (incident, regulatory action, leadership departure, disclosure gap). |
 | **None** | No material events pending. |
 
-## Concern Ceiling Logic
+## Floors and Ceilings
 
-A critical failure in a high-weight dimension can cap the overall grade regardless of composite score. For example:
+A critical failure can cap the overall grade regardless of composite score. The current methodology applies the following hard constraints:
 
-- D12 (Corrigibility) score below 20: grade capped at BB
-- D2 (Safety) score below 15 for Developer profile: grade capped at B
-- D8 (Regulatory) with active enforcement action: automatic Negative Watch
+- Any applicable D1-D10 dimension below 30/100: grade capped at D
+- Any applicable D1-D10 dimension at 30-39/100: grade capped at CC
+- Any applicable D1-D10 dimension at 40-49/100: grade capped at B
+- D1 (Leadership) below 50/100: grade capped at A
+- D8 (Regulatory) below 40/100: grade capped at BBB
+- For Assessed Ratings, D12 (Corrigibility) at 0: grade capped at B, and D12 below 20/100: grade capped at BB
+- Concern screen results can also cap the grade independently: one Elevated concern caps at A, two Elevated concerns cap at BB, one Severe caps at CCC, and one Disqualifying concern caps at D
 
-This ensures that a company cannot achieve a high overall rating while having a critical governance blind spot.
+This ensures that a company cannot achieve a high overall rating while carrying a critical governance blind spot. The full scoring logic is documented in the [Scoring Rubric](/methodology/rubric).
