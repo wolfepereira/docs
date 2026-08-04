@@ -95,10 +95,5 @@
   "footerSocials": {
     "linkedin": "https://www.linkedin.com/company/alpha-ac",
     "twitter": "https://x.com/alphagovernance"
-  },
-  "analytics": {
-    "posthog": {
-      "apiKey": ""
-    }
   }
 }
