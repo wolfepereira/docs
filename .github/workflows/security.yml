@@ -13,8 +13,8 @@ permissions:
   pull-requests: read
 
 concurrency:
-  group: security-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: security-${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.ref || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   secret-scan:
