@@ -1,0 +1,13 @@
+/* Alpha x Geist 1.0. Mintlify loads root CSS automatically. */
+@font-face { font-family: "Alpha Geist"; src: url("/fonts/Geist-Variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Alpha Geist Mono"; src: url("/fonts/GeistMono-Variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+html body { font-family: var(--ds-font-ui); }
+html body :is(h1,h2,h3,h4,button,input,select,textarea) { font-family: var(--ds-font-ui); }
+html body :is(code,pre,kbd,samp) { font-family: var(--ds-font-data); font-variant-numeric: tabular-nums; }
+html body :is(h1,h2,h3) { letter-spacing: -0.035em; }
+html body :is(button,input,select,textarea) { border-radius: var(--ds-radius-control); }
+html body :where(a,button,input,select,textarea,summary):focus-visible { outline: 2px solid var(--ds-focus); outline-offset: 3px; }
+#content-area { color: var(--ds-text); }
+#content-area p { line-height: 1.65; }
+#content-area a { color: var(--ds-link); text-underline-offset: 3px; }
+#content-area table { font-variant-numeric: tabular-nums; }

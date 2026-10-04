@@ -1,0 +1,11 @@
+{
+  "package": "@alpha/design-system",
+  "version": "1.0.0",
+  "source": "wolfepereira/alpha-platform/packages/design-system",
+  "files": {
+    "alpha-tokens.css": "6f7859efd7d01ce23691caf9dce7e14f0c2d66038d369f0920f02bbfd3102158",
+    "fonts/Geist-Variable.woff2": "a369fcf5628ea2aa4e1b9e2ec6a5b3624e365bda588e1f0f2f12b564f728fbb8",
+    "fonts/GeistMono-Variable.woff2": "fba8f577f38a2bbcbe818efa6348dd58f36303a10b8737c42fefad275be563ab",
+    "fonts/LICENSE.txt": "930853ee1daa68554d9e35c8a9175affb74f699fad9a5da6ee5ebe76379d9137"
+  }
+}
