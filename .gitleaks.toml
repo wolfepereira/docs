@@ -1,0 +1,14 @@
+title = "Alpha public documentation secret scan"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Verified SHA-256 of public Alpha design tokens, not a credential"
+condition = "AND"
+regexTarget = "secret"
+regexes = ["^6f7859efd7d01ce23691caf9dce7e14f0c2d66038d369f0920f02bbfd3102158$"]
+paths = ['^GEIST_PROVENANCE\.json$']
