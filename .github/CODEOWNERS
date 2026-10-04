@@ -1,0 +1,15 @@
+# Accountable owner for sensitive implementation and release paths.
+/.github/ @wolfepereira
+/package.json @wolfepereira
+/package-lock.json @wolfepereira
+/bun.lock @wolfepereira
+/pyproject.toml @wolfepereira
+/migrations/ @wolfepereira
+/infra/ @wolfepereira
+/workers/ @wolfepereira
+/worker/ @wolfepereira
+/db/ @wolfepereira
+/app/api/ @wolfepereira
+/src/lib/*auth* @wolfepereira
+/src/lib/*billing* @wolfepereira
+/vercel.json @wolfepereira
