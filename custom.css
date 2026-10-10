@@ -14,3 +14,7 @@ html body :where(a,button,input,select,textarea,summary):focus-visible { outline
 
 /* Alpha Lucide 13.1: outline geometry in both documentation themes. */
 svg.lucide { stroke-width: 1.75; fill: none; }
+
+/* SVG image documents cannot inherit page currentColor. Keep owned outline
+   assets visible in Mintlify dark mode without changing logos or content art. */
+.dark #content-area img[src*="/icons/"][src*=".svg"] { filter: invert(1); }
