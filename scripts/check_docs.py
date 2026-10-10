@@ -3,8 +3,9 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-manifest = json.loads((ROOT / "mint.json").read_text())
+manifest = json.loads((ROOT / "docs.json").read_text())
 errors = []
+assert manifest.get("icons", {}).get("library") == "lucide", "Lucide must remain the configured icon family"
 
 def check_pages(value):
     if isinstance(value, dict):
