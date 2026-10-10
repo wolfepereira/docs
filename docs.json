@@ -1,0 +1,113 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Alpha Documentation",
+  "colors": {
+    "primary": "#0057B8",
+    "light": "#67B8FF",
+    "dark": "#0057B8"
+  },
+  "favicon": "/images/favicon.png",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "glossary"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Methodology",
+        "groups": [
+          {
+            "group": "Methodology",
+            "pages": [
+              "methodology/overview",
+              "methodology/alpha-standard",
+              "methodology/dimensions",
+              "methodology/rubric",
+              "methodology/rating-scale",
+              "methodology/profiles",
+              "methodology/committee-mapping",
+              "methodology/integrity-screen"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Reference",
+            "pages": [
+              "api/overview",
+              "api/quickstart",
+              "api/ratings",
+              "api/signals",
+              "api/attestation",
+              "api/webhooks"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Intelligence Suite",
+        "groups": [
+          {
+            "group": "Intelligence Suite",
+            "pages": [
+              "intelligence-suite/agr",
+              "intelligence-suite/gmi",
+              "intelligence-suite/agiq"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Certification",
+        "groups": [
+          {
+            "group": "Certification",
+            "pages": [
+              "certification/acd-ai",
+              "certification/ace-ai",
+              "certification/assessment-guide",
+              "certification/recertification"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/logo-black.png",
+    "dark": "/images/logo-white.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Alpha Radar",
+        "href": "https://alpha.ac/radar"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get API Key",
+      "href": "https://alpha.ac/settings/api"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/alpha-ac",
+      "twitter": "https://x.com/alphagovernance"
+    }
+  },
+  "icons": {
+    "library": "lucide"
+  }
+}

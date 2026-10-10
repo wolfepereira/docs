@@ -24,20 +24,20 @@ Generate your key at [alpha.ac/settings/api](https://alpha.ac/settings/api).
 ## Endpoints
 
 <CardGroup cols={2}>
-  <Card title="Ratings" icon="chart-bar" href="/api/ratings">
+  <Card title="Ratings" icon="/icons/chart-column.svg" href="/api/ratings">
     **GET** `/v1/ratings/{ticker}` - Single company rating
     **GET** `/v1/ratings/{ticker}/history` - Rating history
     **POST** `/v1/ratings/batch` - Batch query
   </Card>
-  <Card title="Signal Feed" icon="signal" href="/api/signals">
+  <Card title="Signal Feed" icon="/icons/radio.svg" href="/api/signals">
     **GET** `/v1/signals/{ticker}` - Company signals
     **GET** `/v1/signals/feed` - Delta stream
   </Card>
-  <Card title="Attestation" icon="shield-check" href="/api/attestation">
+  <Card title="Attestation" icon="/icons/shield-check.svg" href="/api/attestation">
     **POST** `/v1/attestation` - Run compliance check
     **GET** `/v1/attestation/history/{id}` - History
   </Card>
-  <Card title="Webhooks" icon="bell" href="/api/webhooks">
+  <Card title="Webhooks" icon="/icons/bell.svg" href="/api/webhooks">
     **POST** `/v1/webhooks` - Subscribe to events
     **DELETE** `/v1/webhooks/{id}` - Unsubscribe
   </Card>

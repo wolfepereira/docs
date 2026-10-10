@@ -11,3 +11,6 @@ html body :where(a,button,input,select,textarea,summary):focus-visible { outline
 #content-area p { line-height: 1.65; }
 #content-area a { color: var(--ds-link); text-underline-offset: 3px; }
 #content-area table { font-variant-numeric: tabular-nums; }
+
+/* Alpha Lucide 13.1: outline geometry in both documentation themes. */
+svg.lucide { stroke-width: 1.75; fill: none; }
