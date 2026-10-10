@@ -1,0 +1,17 @@
+{
+  "source": "wolfepereira/alpha-platform/packages/design-system",
+  "manifest": "13.1.1",
+  "lucide": "1.50.0",
+  "files": {
+    "icons/chart-column.svg": "abbb8b32393b30a72fe4ef1fb01836e20ba1907f7602afb96b275d4c407629f6",
+    "icons/radio.svg": "222b0e6d2e3168e8299f92a6e4187c360a35c7165b3ea7c5b06087713645de47",
+    "icons/layers.svg": "c2cdb50c83ad6cab1c45d8b5d4dfc6c5654434402c62c3c147c53ca3ed2da3d0",
+    "icons/shield-check.svg": "acd5dec2801958e88bcaa1806083d6bc92f712abf5fe6a1d5583bbf26365907c",
+    "icons/bell.svg": "3bc95506ccf4b1a5f9f73491d2a635c0c3b9d68f69311d71643bc6afa7e4852c",
+    "icons/globe.svg": "843a44b8e160bbc071de694d24ddfa3b54722c0b848349dfc0bcbcbb0b317231",
+    "icons/grid-2x2.svg": "3aaba73d53bd2a8e85a645a9ffec10df414a32eeb5c13218c1397c354e964497",
+    "icons/list-checks.svg": "ec0a287a93fb03223b0f5e1ef69c20bbace93f2226887c6f653fa76f1f583f64",
+    "icons/users.svg": "9ba015f9563f662fd8b05c5a656ad4d00c08267c9b5a0c0d62c6671d1b575005",
+    "icons/eye.svg": "4e870a64fead0d7b5fbe4512c913ea2b58d5639bffb0874a592dfd83aed0ed69"
+  }
+}

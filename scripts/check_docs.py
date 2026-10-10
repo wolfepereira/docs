@@ -27,3 +27,16 @@ for path in ROOT.rglob("*.json"):
 if errors:
     raise SystemExit("\n".join(errors))
 print("Documentation navigation and JSON contracts passed")
+
+# Authored card icons are pinned canonical SVG assets; provider shell stays Lucide.
+import hashlib
+import re
+icons = json.loads((ROOT / "LUCIDE_PROVENANCE.json").read_text())
+for file, expected in icons["files"].items():
+    data = (ROOT / file).read_bytes()
+    assert hashlib.sha256(data).hexdigest() == expected, file
+    assert b'stroke-width="1.75"' in data, file
+for page in ROOT.rglob("*.mdx"):
+    for icon in re.findall(r'icon="([^"]+)"', page.read_text()):
+        assert icon.lstrip("/") in icons["files"], (page, icon)
+print("Canonical Lucide card assets and all authored icon references passed")
