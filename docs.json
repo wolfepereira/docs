@@ -91,8 +91,24 @@
   "navbar": {
     "links": [
       {
-        "label": "Alpha Radar",
-        "href": "https://alpha.ac/radar"
+        "label": "Platform",
+        "href": "https://www.alpha.ac/platform"
+      },
+      {
+        "label": "Institute",
+        "href": "https://institute.alpha.ac/"
+      },
+      {
+        "label": "Council",
+        "href": "https://council.alpha.ac/"
+      },
+      {
+        "label": "Events",
+        "href": "https://www.alpha.ac/events"
+      },
+      {
+        "label": "Company",
+        "href": "https://www.alpha.ac/company"
       }
     ],
     "primary": {
