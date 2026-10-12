@@ -40,3 +40,11 @@ for page in ROOT.rglob("*.mdx"):
     for icon in re.findall(r'icon="([^"]+)"', page.read_text()):
         assert icon.lstrip("/") in icons["files"], (page, icon)
 print("Canonical Lucide card assets and all authored icon references passed")
+
+# A generated contract prevents the hosted docs navbar from drifting.
+nav = json.loads((ROOT / "NAVIGATION_PROVENANCE.json").read_text())
+assert manifest["navbar"]["links"] == nav["links"], "Regenerate public links from the Alpha design system"
+canonical = json.dumps(nav["links"], separators=(",", ":"), ensure_ascii=False)
+assert hashlib.sha256(canonical.encode()).hexdigest() == nav["sha256"]
+assert [link["label"] for link in nav["links"]] == ["Platform", "Institute", "Council", "Events", "Company"]
+print("Shared Alpha public navigation projection passed")

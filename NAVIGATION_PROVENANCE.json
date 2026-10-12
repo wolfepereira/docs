@@ -1,0 +1,28 @@
+{
+  "source": "wolfepereira/alpha-platform/packages/design-system/src/navigation.ts",
+  "version": "1.0.0",
+  "sha256": "f6e4a614a7b8bc13d061728c1571532974a68f7a9d7cf4b7c514bc2729f140fb",
+  "links": [
+    {
+      "label": "Platform",
+      "href": "https://www.alpha.ac/platform"
+    },
+    {
+      "label": "Institute",
+      "href": "https://institute.alpha.ac/"
+    },
+    {
+      "label": "Council",
+      "href": "https://council.alpha.ac/"
+    },
+    {
+      "label": "Events",
+      "href": "https://www.alpha.ac/events"
+    },
+    {
+      "label": "Company",
+      "href": "https://www.alpha.ac/company"
+    }
+  ],
+  "adapter": "Mintlify native navbar; documentation sidebar and provider appearance retained"
+}
