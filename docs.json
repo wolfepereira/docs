@@ -113,8 +113,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Get API Key",
-      "href": "https://alpha.ac/settings/api"
+      "label": "Account",
+      "href": "https://www.alpha.ac/account"
     }
   },
   "footer": {
