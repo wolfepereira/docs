@@ -1,6 +1,6 @@
 {
   "source": "wolfepereira/alpha-platform/packages/design-system/src/navigation.ts",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "sha256": "f6e4a614a7b8bc13d061728c1571532974a68f7a9d7cf4b7c514bc2729f140fb",
   "links": [
     {
@@ -24,5 +24,16 @@
       "href": "https://www.alpha.ac/company"
     }
   ],
-  "adapter": "Mintlify native navbar; documentation sidebar and provider appearance retained"
+  "adapter": "Mintlify native global navbar and contextual documentation tabs; provider search and appearance retained",
+  "section": {
+    "id": "docs",
+    "label": "Alpha Documentation",
+    "tabs": [
+      "Documentation",
+      "Methodology",
+      "API Reference",
+      "Intelligence Suite",
+      "Certification"
+    ]
+  }
 }

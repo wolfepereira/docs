@@ -18,3 +18,14 @@ svg.lucide { stroke-width: 1.75; fill: none; }
 /* SVG image documents cannot inherit page currentColor. Keep owned outline
    assets visible in Mintlify dark mode without changing logos or content art. */
 .dark #content-area img[src*="/icons/"][src*=".svg"] { filter: invert(1); }
+
+/* Two-tier adapter: provider owns interactions; Alpha owns shared geometry. */
+#navbar { font-family: var(--ds-font-ui); font-size: 14px; }
+#navbar > .max-w-8xl { max-width: 1280px; }
+#navbar .nav-logo { height: 28px; width: 100px; object-fit: contain; }
+#navbar nav[aria-label="Main"] a { min-height: 44px; display: inline-flex; align-items: center; }
+#navbar :is(#search-bar-entry, #theme-preference-menu-trigger) { min-height: 44px; }
+#navbar svg { stroke-width: 1.75; }
+@media (min-width: 1024px) {
+  #navbar .lg\:px-12 { padding-inline: 32px; }
+}
